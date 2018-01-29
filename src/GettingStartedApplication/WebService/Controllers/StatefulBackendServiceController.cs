@@ -85,6 +85,10 @@ namespace WebService.Controllers
             {
                 string key = keyValuePair.Key;
 
+                if (!String.IsNullOrEmpty(key))
+                {
+                    partitionKeyNumber = GetPartitionKey(key);
+                }
                 // Should we validate this in the UI or here in the controller?
                 if (!String.IsNullOrEmpty(key))
                 {

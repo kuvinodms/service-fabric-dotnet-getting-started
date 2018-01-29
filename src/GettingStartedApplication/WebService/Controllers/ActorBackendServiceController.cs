@@ -49,7 +49,7 @@ namespace WebService.Controllers
 
                 ContinuationToken continuationToken = null;
 
-                do
+                while (continuationToken != null)
                 {
                     PagedResult<ActorInformation> page = await actorServiceProxy.GetActorsAsync(continuationToken, CancellationToken.None);
 
@@ -57,7 +57,7 @@ namespace WebService.Controllers
 
                     continuationToken = page.ContinuationToken;
                 }
-                while (continuationToken != null);
+                
             }
 
             return this.Json(new CountViewModel() { Count = count } );

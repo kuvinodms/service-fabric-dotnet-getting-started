@@ -115,7 +115,11 @@ namespace WebService.Controllers
                 Content = await response.Content.ReadAsStringAsync()
             };
         }
-
+        
+        public string Gets(int ids)
+        {
+            throw new NotImplementedException("No method implemented to get a specific key/value pair from the Stateful Backend Service");
+        }
 
         // GET api/values/5
         [HttpGet("{id}")]
